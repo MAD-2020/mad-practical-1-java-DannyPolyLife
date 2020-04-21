@@ -4,29 +4,26 @@ public class Question5
 {
   public static void main(String[] args)
   {
-    /**
-     * Prompt the user for number. This input indicates the number of integers the user will be entering next. 
-     * Print out the mode (highest occurrence) from the set of integers. 
-     *    e.g.
-     *     > 5
-     *     > 2
-     *     > 4
-     *     > 1
-     *     > 3
-     *     > 4
-     *     4
-     * 
-     *    e.g.
-     *     > 4
-     *     > 2
-     *     > 2
-     *     > 3
-     *     > 3
-     *     2
-     * Hint: Use a loop to get input. Use another 2 loops to find the mode
-     */
-     
-    Scanner in = new Scanner(System.in);
+    Scanner InputOfUser = new Scanner(System.in);
+    
+    System.out.printf("Enter number of integer you want to enter: ");
+    int numberofIntegers = InputOfUser.nextInt();
+
+    System.out.println("You have chosen to enter " + numberofIntegers + " integers");
+
+    ArrayList<Integer> Integers = new ArrayList<>();
+    for(int i = 0; i < numberofIntegers; i++){
+      System.out.printf("Enter an integer: ");
+      int dataInteger = InputOfUser.nextInt();
+      Integers.add(dataInteger);
+    }
+    int highestValue = Integers.get(0);
+    for(int i : Integers){
+      if (i > highestValue){
+        highestValue = i;
+      }
+    }
+    System.out.println("The mode of these integers is: "+ highestValue);
     
   }
 }
