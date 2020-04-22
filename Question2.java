@@ -5,13 +5,16 @@ public class Question2
   public static void main(String[] args)
   {
     Scanner InputOfUser = new Scanner(System.in);
-
-    System.out.printf("Enter height: ");
-    String height = InputOfUser.nextLine(); 
+    
+    
+    //asking for input
+    System.out.printf("Enter height in metres: ");
+    double height = InputOfUser.nextDouble(); 
     System.out.printf("Enter weight: ");
-    String weight = InputOfUser.nextLine(); 
-
-    System.out.println("Your height is " + height);
-    System.out.println("Your weight is " + weight);
+    double weight = InputOfUser.nextDouble(); 
+    
+    //calculating bmi
+    double bmi = weight/(height*height);
+    System.out.println("Your BMI is " + bmi);
   }
 }
